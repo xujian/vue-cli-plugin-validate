@@ -1,0 +1,18 @@
+{
+  "name": "vue-cli-plugin-validate",
+  "version": "0.0.4",
+  "description": "Vue-cli-3 plugin: validate",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "vee-validate": "^2.1.0-beta.9"
+  },
+  "keywords": [
+    "api",
+    "vue-cli-plugin",
+    "vue",
+    "plugin"
+  ],
+  "author": "Mike Jian Xu",
+  "license": "MIT"
+}
