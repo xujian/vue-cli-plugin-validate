@@ -1,4 +1,5 @@
 import VeeValidate from 'vee-validate'
+import error from './error'
 
 export default ({ app, router, Vue }) => {
   const config = {
@@ -8,7 +9,7 @@ export default ({ app, router, Vue }) => {
     locale: 'en',
     dictionary: null,
     strict: true,
-    classes: false,
+    classes: true,
     classNames: {
       touched: 'touched', // the control has been blurred
       untouched: 'untouched', // the control hasn't been blurred
@@ -17,12 +18,14 @@ export default ({ app, router, Vue }) => {
       pristine: 'pristine', // control has not been interacted with
       dirty: 'dirty' // control has been interacted with
     },
+    fastExit: false,
     events: 'input|blur',
     inject: true,
     validity: false,
     aria: true
   }
   Vue.use(VeeValidate, config)
+  Vue.component('validate-error', error)
 
   // 自定义规则
   VeeValidate.Validator.extend('tel', value => /^\+?[0-9-]{7,17}$/.test(value))
